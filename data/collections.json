@@ -1,0 +1,62 @@
+[
+  {
+    "id": "musicals",
+    "active": true,
+    "type": "Genre Collection",
+    "title": "Musicals",
+    "desc": "From the golden age of Hollywood through Broadway adaptations and rock operas.",
+    "match": { "type": "genre_includes", "value": "Musical" },
+    "years": "1927–Present"
+  },
+  {
+    "id": "westerns",
+    "active": true,
+    "type": "Genre Collection",
+    "title": "Westerns",
+    "desc": "Frontier justice and the mythology of the American West — from John Ford epics to Spaghetti Westerns.",
+    "match": { "type": "genre_includes", "value": "Western" },
+    "years": "1920s–Present"
+  },
+  {
+    "id": "disney",
+    "active": true,
+    "type": "Studio Collection",
+    "title": "Disney",
+    "desc": "The complete Disney theatrical legacy — animation and live action from Snow White to the present.",
+    "match": { "type": "genre_includes_lower", "value": "disney" },
+    "years": "1937–Present"
+  },
+  {
+    "id": "holiday-films",
+    "active": false,
+    "type": "Genre Collection",
+    "title": "Holiday Films",
+    "desc": "Christmas classics, holiday traditions, and films set in the season.",
+    "match": {
+      "type": "compound",
+      "any": [
+        { "type": "title_includes", "value": "Christmas" },
+        { "type": "title_includes", "value": "Holiday" },
+        { "type": "title_includes", "value": "Home Alone" }
+      ]
+    },
+    "years": "1940s–Present",
+    "customImage": "images/hubs/holiday-films.jpg"
+  },
+  {
+    "id": "80s-comedies",
+    "active": false,
+    "type": "Era Collection",
+    "title": "80s Comedies",
+    "desc": "The defining comedies of the era — high-concept, irreverent, and unmistakably 1980s.",
+    "match": {
+      "type": "compound",
+      "all": [
+        { "type": "decade_equals", "value": "1980s" },
+        { "type": "genre_includes", "value": "Comedy" }
+      ]
+    },
+    "years": "1980–1989",
+    "customImage": "images/hubs/80s-comedies.jpg"
+  }
+]
