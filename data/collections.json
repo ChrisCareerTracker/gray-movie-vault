@@ -10,7 +10,8 @@
       "value": "Musical"
     },
     "years": "1927–Present",
-    "cardStyle": "banner"
+    "cardStyle": "banner",
+    "customImage": "images/hubs/musicals.jpg"
   },
   {
     "id": "westerns",
@@ -23,7 +24,8 @@
       "value": "Western"
     },
     "years": "1920s–Present",
-    "cardStyle": "banner"
+    "cardStyle": "banner",
+    "customImage": "images/hubs/westerns.jpg"
   },
   {
     "id": "disney",
@@ -36,7 +38,8 @@
       "value": "walt disney"
     },
     "years": "1937–Present",
-    "cardStyle": "banner"
+    "cardStyle": "banner",
+    "customImage": "images/hubs/disney.jpg"
   },
   {
     "id": "40s-comedies",
