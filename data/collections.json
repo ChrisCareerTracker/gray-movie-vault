@@ -5,8 +5,12 @@
     "type": "Genre Collection",
     "title": "Musicals",
     "desc": "From the golden age of Hollywood through Broadway adaptations and rock operas.",
-    "match": { "type": "genre_includes", "value": "Musical" },
-    "years": "1927–Present"
+    "match": {
+      "type": "genre_includes",
+      "value": "Musical"
+    },
+    "years": "1927–Present",
+    "cardStyle": "banner"
   },
   {
     "id": "westerns",
@@ -14,8 +18,12 @@
     "type": "Genre Collection",
     "title": "Westerns",
     "desc": "Frontier justice and the mythology of the American West — from John Ford epics to Spaghetti Westerns.",
-    "match": { "type": "genre_includes", "value": "Western" },
-    "years": "1920s–Present"
+    "match": {
+      "type": "genre_includes",
+      "value": "Western"
+    },
+    "years": "1920s–Present",
+    "cardStyle": "banner"
   },
   {
     "id": "disney",
@@ -23,8 +31,210 @@
     "type": "Studio Collection",
     "title": "Disney",
     "desc": "The complete Disney theatrical legacy — animation and live action from Snow White to the present.",
-    "match": { "type": "genre_includes_lower", "value": "disney" },
-    "years": "1937–Present"
+    "match": {
+      "type": "genre_includes_lower",
+      "value": "disney"
+    },
+    "years": "1937–Present",
+    "cardStyle": "banner"
+  },
+  {
+    "id": "40s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1940s Comedies",
+    "desc": "Pre-war wit, screwball romance, and the Marx Brothers at MGM.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1940s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1940–1949",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "50s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1950s Comedies",
+    "desc": "Postwar suburbia, big studio polish, and Hollywood's most charming farces.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1950s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1950–1959",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "60s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1960s Comedies",
+    "desc": "Swinging satires, sex farces, and the dawn of the modern comedy.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1960s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1960–1969",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "70s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1970s Comedies",
+    "desc": "Mel Brooks, Monty Python, and the irreverent New Hollywood reset.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1970s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1970–1979",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "80s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1980s Comedies",
+    "desc": "The defining comedies of the era — high-concept, irreverent, and unmistakably 1980s.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1980s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1980–1989",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "90s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "1990s Comedies",
+    "desc": "Indie sensibilities meet studio swagger — the decade comedy got self-aware.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "1990s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "1990–1999",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "2000s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "2000s Comedies",
+    "desc": "Frat-pack chaos, mockumentary deadpan, and the rise of Apatow.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "2000s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "2000–2009",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "2010s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "2010s Comedies",
+    "desc": "Streaming-era abundance — every flavor of comedy, all at once.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "2010s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "2010–2019",
+    "cardStyle": "mosaic"
+  },
+  {
+    "id": "2020s-comedies",
+    "active": true,
+    "type": "Era Collection",
+    "title": "2020s Comedies",
+    "desc": "The latest cuts — comedies of the current moment.",
+    "match": {
+      "type": "compound",
+      "all": [
+        {
+          "type": "decade_equals",
+          "value": "2020s"
+        },
+        {
+          "type": "genre_includes",
+          "value": "Comedy"
+        }
+      ]
+    },
+    "years": "2020–Present",
+    "cardStyle": "mosaic"
   },
   {
     "id": "holiday-films",
@@ -35,28 +245,22 @@
     "match": {
       "type": "compound",
       "any": [
-        { "type": "title_includes", "value": "Christmas" },
-        { "type": "title_includes", "value": "Holiday" },
-        { "type": "title_includes", "value": "Home Alone" }
+        {
+          "type": "title_includes",
+          "value": "Christmas"
+        },
+        {
+          "type": "title_includes",
+          "value": "Holiday"
+        },
+        {
+          "type": "title_includes",
+          "value": "Home Alone"
+        }
       ]
     },
     "years": "1940s–Present",
-    "customImage": "images/hubs/holiday-films.jpg"
-  },
-  {
-    "id": "80s-comedies",
-    "active": false,
-    "type": "Era Collection",
-    "title": "80s Comedies",
-    "desc": "The defining comedies of the era — high-concept, irreverent, and unmistakably 1980s.",
-    "match": {
-      "type": "compound",
-      "all": [
-        { "type": "decade_equals", "value": "1980s" },
-        { "type": "genre_includes", "value": "Comedy" }
-      ]
-    },
-    "years": "1980–1989",
-    "customImage": "images/hubs/80s-comedies.jpg"
+    "customImage": "images/hubs/holiday-films.jpg",
+    "cardStyle": "banner"
   }
 ]

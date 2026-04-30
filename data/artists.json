@@ -9,7 +9,12 @@
     "match": {
       "type": "name_in_credits",
       "value": "Alfred Hitchcock",
-      "fields": ["dir", "actor", "supp", "cast"]
+      "fields": [
+        "dir",
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 2636,
     "years": "1925–1976",
@@ -25,7 +30,12 @@
     "match": {
       "type": "name_in_credits",
       "value": "Mel Brooks",
-      "fields": ["dir", "actor", "supp", "cast"]
+      "fields": [
+        "dir",
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 14639,
     "years": "1967–1995",
@@ -41,7 +51,12 @@
     "match": {
       "type": "name_in_credits",
       "value": "Wes Anderson",
-      "fields": ["dir", "actor", "supp", "cast"]
+      "fields": [
+        "dir",
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 5655,
     "years": "1996–Present",
@@ -57,13 +72,43 @@
     "match": {
       "type": "compound",
       "any": [
-        { "type": "name_in_credits", "value": "Abrahams",     "fields": ["dir"] },
-        { "type": "name_in_credits", "value": "David Zucker", "fields": ["dir"] },
-        { "type": "name_in_credits", "value": "Jerry Zucker", "fields": ["dir"] },
-        { "type": "title_includes", "value": "Naked Gun" },
-        { "type": "title_includes", "value": "Hot Shots" },
-        { "type": "title_includes", "value": "Airplane" },
-        { "type": "title_includes", "value": "Top Secret" }
+        {
+          "type": "name_in_credits",
+          "value": "Abrahams",
+          "fields": [
+            "dir"
+          ]
+        },
+        {
+          "type": "name_in_credits",
+          "value": "David Zucker",
+          "fields": [
+            "dir"
+          ]
+        },
+        {
+          "type": "name_in_credits",
+          "value": "Jerry Zucker",
+          "fields": [
+            "dir"
+          ]
+        },
+        {
+          "type": "title_includes",
+          "value": "Naked Gun"
+        },
+        {
+          "type": "title_includes",
+          "value": "Hot Shots"
+        },
+        {
+          "type": "title_includes",
+          "value": "Airplane"
+        },
+        {
+          "type": "title_includes",
+          "value": "Top Secret"
+        }
       ]
     },
     "personId": 12936,
@@ -80,7 +125,12 @@
     "match": {
       "type": "name_in_credits",
       "value": "Rob Reiner",
-      "fields": ["dir", "actor", "supp", "cast"]
+      "fields": [
+        "dir",
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 3026,
     "years": "1984–Present",
@@ -96,14 +146,41 @@
     "match": {
       "type": "compound",
       "any": [
-        { "type": "name_in_credits", "value": "John Hughes", "fields": ["dir"] },
-        { "type": "title_includes", "value": "Home Alone" },
-        { "type": "title_includes", "value": "National Lampoon's Vacation" },
-        { "type": "title_includes", "value": "Ferris Bueller" },
-        { "type": "title_includes", "value": "Breakfast Club" },
-        { "type": "title_includes", "value": "Sixteen Candles" },
-        { "type": "title_includes", "value": "Pretty in Pink" },
-        { "type": "title_includes", "value": "Planes, Trains" }
+        {
+          "type": "name_in_credits",
+          "value": "John Hughes",
+          "fields": [
+            "dir"
+          ]
+        },
+        {
+          "type": "title_includes",
+          "value": "Home Alone"
+        },
+        {
+          "type": "title_includes",
+          "value": "National Lampoon's Vacation"
+        },
+        {
+          "type": "title_includes",
+          "value": "Ferris Bueller"
+        },
+        {
+          "type": "title_includes",
+          "value": "Breakfast Club"
+        },
+        {
+          "type": "title_includes",
+          "value": "Sixteen Candles"
+        },
+        {
+          "type": "title_includes",
+          "value": "Pretty in Pink"
+        },
+        {
+          "type": "title_includes",
+          "value": "Planes, Trains"
+        }
       ]
     },
     "personId": 11505,
@@ -120,7 +197,12 @@
     "match": {
       "type": "name_in_credits",
       "value": "Albert Brooks",
-      "fields": ["dir", "actor", "supp", "cast"]
+      "fields": [
+        "dir",
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 13,
     "years": "1979–2012",
@@ -136,7 +218,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Robin Williams",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 2157,
     "years": "1980–2014",
@@ -152,7 +238,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Frank Sinatra",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 4347,
     "years": "1941–1980",
@@ -168,9 +258,27 @@
     "match": {
       "type": "compound",
       "any": [
-        { "type": "name_in_credits", "value": "Groucho",    "fields": ["actor"] },
-        { "type": "name_in_credits", "value": "Harpo",      "fields": ["actor"] },
-        { "type": "name_in_credits", "value": "Chico Marx", "fields": ["actor"] }
+        {
+          "type": "name_in_credits",
+          "value": "Groucho",
+          "fields": [
+            "actor"
+          ]
+        },
+        {
+          "type": "name_in_credits",
+          "value": "Harpo",
+          "fields": [
+            "actor"
+          ]
+        },
+        {
+          "type": "name_in_credits",
+          "value": "Chico Marx",
+          "fields": [
+            "actor"
+          ]
+        }
       ]
     },
     "movieId": 442887,
@@ -187,7 +295,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Paul Newman",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 3636,
     "years": "1954–2006",
@@ -203,7 +315,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Robert De Niro",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 380,
     "years": "1968–Present",
@@ -222,14 +338,20 @@
         {
           "type": "name_in_credits",
           "value": "Jack Lemmon",
-          "fields": ["actor", "supp", "cast"]
+          "fields": [
+            "actor",
+            "supp",
+            "cast"
+          ]
         }
       ],
       "none": [
         {
           "type": "name_in_credits_lower",
           "value": "kasi lemmons",
-          "fields": ["dir"]
+          "fields": [
+            "dir"
+          ]
         }
       ]
     },
@@ -247,7 +369,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Sidney Poitier",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 16897,
     "years": "1950–2001",
@@ -263,7 +389,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "James Garner",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 16896,
     "years": "1956–2013",
@@ -279,19 +409,35 @@
     "match": {
       "type": "compound",
       "any": [
-        { "type": "name_in_credits", "value": "Bob Hope",    "fields": ["actor", "supp"] },
-        { "type": "name_in_credits", "value": "Bing Crosby", "fields": ["actor", "supp"] },
-        { "type": "franchise_includes", "value": "Road" }
+        {
+          "type": "name_in_credits",
+          "value": "Bob Hope",
+          "fields": [
+            "actor",
+            "supp"
+          ]
+        },
+        {
+          "type": "name_in_credits",
+          "value": "Bing Crosby",
+          "fields": [
+            "actor",
+            "supp"
+          ]
+        },
+        {
+          "type": "franchise_includes",
+          "value": "Road"
+        }
       ]
     },
     "collectionId": 135441,
     "years": "1934–1979",
     "customImage": "images/hubs/hope-crosby.jpg"
   },
-
   {
     "id": "gene-hackman",
-    "active": false,
+    "active": true,
     "type": "Artist Hub",
     "name": "Gene Hackman",
     "shortName": "Hackman",
@@ -299,7 +445,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Gene Hackman",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 193,
     "years": "1964–2004",
@@ -307,7 +457,7 @@
   },
   {
     "id": "tom-hanks",
-    "active": false,
+    "active": true,
     "type": "Artist Hub",
     "name": "Tom Hanks",
     "shortName": "Tom Hanks",
@@ -315,7 +465,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Tom Hanks",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 31,
     "years": "1984–Present",
@@ -323,7 +477,7 @@
   },
   {
     "id": "tom-cruise",
-    "active": false,
+    "active": true,
     "type": "Artist Hub",
     "name": "Tom Cruise",
     "shortName": "Tom Cruise",
@@ -331,7 +485,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Tom Cruise",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 500,
     "years": "1981–Present",
@@ -339,7 +497,7 @@
   },
   {
     "id": "matt-damon",
-    "active": false,
+    "active": true,
     "type": "Artist Hub",
     "name": "Matt Damon",
     "shortName": "Matt Damon",
@@ -347,7 +505,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Matt Damon",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 1892,
     "years": "1988–Present",
@@ -355,7 +517,7 @@
   },
   {
     "id": "eddie-murphy",
-    "active": false,
+    "active": true,
     "type": "Artist Hub",
     "name": "Eddie Murphy",
     "shortName": "Eddie Murphy",
@@ -363,7 +525,11 @@
     "match": {
       "type": "name_in_credits",
       "value": "Eddie Murphy",
-      "fields": ["actor", "supp", "cast"]
+      "fields": [
+        "actor",
+        "supp",
+        "cast"
+      ]
     },
     "personId": 776,
     "years": "1982–Present",
