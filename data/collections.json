@@ -32,8 +32,8 @@
     "title": "Disney",
     "desc": "The complete Disney theatrical legacy — animation and live action from Snow White to the present.",
     "match": {
-      "type": "genre_includes_lower",
-      "value": "disney"
+      "type": "studio_includes_lower",
+      "value": "walt disney"
     },
     "years": "1937–Present",
     "cardStyle": "banner"
@@ -54,6 +54,32 @@
         {
           "type": "genre_includes",
           "value": "Comedy"
+        }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
         }
       ]
     },
@@ -77,6 +103,32 @@
           "type": "genre_includes",
           "value": "Comedy"
         }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
+        }
       ]
     },
     "years": "1950–1959",
@@ -98,6 +150,32 @@
         {
           "type": "genre_includes",
           "value": "Comedy"
+        }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
         }
       ]
     },
@@ -121,6 +199,32 @@
           "type": "genre_includes",
           "value": "Comedy"
         }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
+        }
       ]
     },
     "years": "1970–1979",
@@ -142,6 +246,32 @@
         {
           "type": "genre_includes",
           "value": "Comedy"
+        }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
         }
       ]
     },
@@ -165,6 +295,32 @@
           "type": "genre_includes",
           "value": "Comedy"
         }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
+        }
       ]
     },
     "years": "1990–1999",
@@ -186,6 +342,32 @@
         {
           "type": "genre_includes",
           "value": "Comedy"
+        }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
         }
       ]
     },
@@ -209,6 +391,32 @@
           "type": "genre_includes",
           "value": "Comedy"
         }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
+        }
       ]
     },
     "years": "2010–2019",
@@ -230,6 +438,32 @@
         {
           "type": "genre_includes",
           "value": "Comedy"
+        }
+      ],
+      "none": [
+        {
+          "type": "title_includes_lower",
+          "value": "christmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "santa"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "xmas"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home alone"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "holiday inn"
+        },
+        {
+          "type": "title_includes_lower",
+          "value": "home for the holidays"
         }
       ]
     },

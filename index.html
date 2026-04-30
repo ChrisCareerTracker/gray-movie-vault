@@ -218,6 +218,13 @@ body.grid-view .movie-grid{display:grid;}body.grid-view .movie-list{display:none
 .modal-poster{position:relative;z-index:1;width:100%;aspect-ratio:2/3;overflow:hidden;background:var(--surface2);}
 .modal-poster img{width:100%;height:100%;object-fit:cover;}
 .modal-poster-fb{width:100%;height:100%;display:flex;align-items:center;justify-content:center;padding:8px;font-family:'Bebas Neue',sans-serif;font-size:13px;color:var(--gold);text-align:center;line-height:1.2;}
+.modal-poster-img{cursor:zoom-in;transition:opacity 0.2s;}
+.modal-poster-img:hover{opacity:0.9;}
+.poster-lightbox{position:fixed;inset:0;background:rgba(8,8,9,0.96);display:flex;align-items:center;justify-content:center;z-index:9999;opacity:0;pointer-events:none;transition:opacity 0.25s ease;cursor:zoom-out;padding:40px;}
+.poster-lightbox.open{opacity:1;pointer-events:auto;}
+.poster-lightbox img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;box-shadow:0 24px 64px rgba(0,0,0,0.9),0 0 0 1px rgba(201,168,76,0.2);}
+.poster-lightbox-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-family:'DM Mono',monospace;font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--text2);opacity:0.6;}
+
 .modal-title-block{flex:1;padding-bottom:6px;}
 .modal-eyebrow{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;display:flex;align-items:center;gap:10px;}
 .modal-eyebrow::before{content:'';width:18px;height:1px;background:var(--gold);}
@@ -376,6 +383,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;align-i
 </div>
 <div class="modal-overlay" id="modalOverlay" onclick="handleOverlayClick(event)">
   <div class="modal"><button class="modal-close" onclick="closeModal()">✕</button><div id="modalContent"></div></div>
+<div id="posterLightbox" class="poster-lightbox" onclick="closePosterLightbox()"><img id="posterLightboxImg" src="" alt=""><div class="poster-lightbox-hint">Click anywhere to close</div></div>
 </div>
 <script>
 
@@ -427,8 +435,10 @@ function matchRule(m, rule){
       return rule.fields.some(f => (m[f]||'').toLowerCase().includes(v));
     }
     case 'title_includes':       return m.title.includes(rule.value);
+    case 'title_includes_lower': return m.title.toLowerCase().includes(rule.value.toLowerCase());
     case 'genre_includes':       return m.genre.includes(rule.value);
     case 'genre_includes_lower': return m.genre.toLowerCase().includes(rule.value.toLowerCase());
+    case 'studio_includes_lower':return (m.studio||'').toLowerCase().includes(rule.value.toLowerCase());
     case 'franchise_includes':   return (m.franchise||'').includes(rule.value);
     case 'decade_equals':        return m.decade === rule.value;
     case 'compound': {
@@ -669,7 +679,7 @@ async function openModal(movie){
       <div class="modal-backdrop-overlay"></div>
       <div class="modal-hero">
         <div class="modal-poster-wrap"><div class="modal-poster">
-          ${pImg?`<img src="${pImg}" alt="${movie.title}">`:`<div class="modal-poster-fb">${movie.title}</div>`}
+          ${pImg?`<img src="${pImg}" alt="${movie.title}" class="modal-poster-img" onclick="openPosterLightbox('${movie.poster}')" title="Click to view full size">`:`<div class="modal-poster-fb">${movie.title}</div>`}
         </div></div>
         <div class="modal-title-block">
           <div class="modal-eyebrow">${movie.decade} · ${movie.genre}</div>
@@ -713,9 +723,28 @@ async function openModal(movie){
       </div>
     </div>`;
 }
+function openPosterLightbox(posterPath){
+  if(!posterPath) return;
+  const lb = document.getElementById('posterLightbox');
+  const img = document.getElementById('posterLightboxImg');
+  img.src = poster(posterPath, 'original');
+  lb.classList.add('open');
+}
+function closePosterLightbox(){
+  const lb = document.getElementById('posterLightbox');
+  lb.classList.remove('open');
+  // Clear src after transition so we don't leak memory holding a giant image
+  setTimeout(() => { document.getElementById('posterLightboxImg').src = ''; }, 300);
+}
 function closeModal(){document.getElementById('modalOverlay').classList.remove('open');document.body.style.overflow='';}
 function handleOverlayClick(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
-document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'){
+    const lb=document.getElementById('posterLightbox');
+    if(lb && lb.classList.contains('open')) closePosterLightbox();
+    else closeModal();
+  }
+});
 
 // ============================================================
 // COLLECTION CARD HOVER — rotating poster effect
@@ -1004,7 +1033,8 @@ async function init(){
 Object.assign(window, {
   goHome, scrollToCollections, setView, toggleFilters, clearFilters,
   openHeroModal, jumpHero, setDecade, toggleChip, handleSearch,
-  closeHub, closeModal, handleOverlayClick, openHub
+  closeHub, closeModal, handleOverlayClick, openHub,
+  openPosterLightbox, closePosterLightbox
 });
 
 init();
