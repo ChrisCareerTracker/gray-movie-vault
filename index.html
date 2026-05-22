@@ -40,6 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .btn-view-toggle:hover,.btn-view-toggle.active{color:var(--gold);border-color:var(--gold3);}
 .btn-collections-nav{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--gold);border:1px solid var(--gold3);padding:6px 12px;background:transparent;cursor:pointer;transition:all 0.2s;}
 .btn-collections-nav:hover{background:var(--gold-glow);}
+.btn-collections-nav.active{background:rgba(201,168,76,0.18);color:var(--gold2);border-color:var(--gold);}
 .btn-icon{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:2px;color:var(--text3);border:1px solid var(--border);padding:6px 10px;background:transparent;cursor:pointer;transition:all 0.2s;}
 .btn-icon:hover,.btn-icon.active{color:var(--gold);border-color:var(--gold3);}
 .filter-drawer{position:fixed;top:64px;left:0;right:0;z-index:150;background:rgba(13,13,18,0.97);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);max-height:0;overflow:hidden;transition:max-height 0.35s cubic-bezier(0.4,0,0.2,1),padding 0.3s;}
@@ -146,8 +147,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:300;display:flex;align-items:cen
 .card-badge.sd{color:#888;border-color:rgba(136,136,136,0.3);}
 .card-shelf{position:absolute;bottom:0;left:0;right:0;padding:10px 10px 12px;z-index:4;}
 .card-shelf-title{font-family:'Crimson Pro',serif;font-size:13px;font-weight:600;color:var(--text);line-height:1.2;margin-bottom:2px;text-shadow:0 1px 8px rgba(0,0,0,0.8);}
-.card-shelf-meta{font-family:'DM Mono',monospace;font-size:7px;font-weight:600;letter-spacing:1px;color:var(--gold);text-transform:uppercase;text-shadow:0 1px 4px rgba(0,0,0,0.9);}
-.card-shelf-meta .meta-year{font-size:8px;}
+.card-shelf-meta{font-family:'DM Mono',monospace;font-size:7px;letter-spacing:1px;color:#8a8680;text-transform:uppercase;}
 .card-hover-cta{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;z-index:5;opacity:0;transition:opacity 0.3s;}
 .movie-card:hover .card-hover-cta{opacity:1;}
 .card-cta-pill{font-family:'DM Mono',monospace;font-size:9px;letter-spacing:3px;text-transform:uppercase;color:var(--gold);border:1px solid var(--gold);padding:6px 14px;background:rgba(8,8,9,0.85);backdrop-filter:blur(4px);transform:translateY(6px);transition:transform 0.3s cubic-bezier(0.2,0.8,0.2,1);}
@@ -320,6 +320,7 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;align-i
   <div class="nav-center" id="navDecades"></div>
   <div class="nav-right">
     <button class="btn-collections-nav" onclick="scrollToCollections()">Collections</button>
+    <button class="btn-collections-nav" id="btnRecent" onclick="toggleRecent()">Recently Added</button>
     <div class="nav-search-wrap">
       <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
       <input type="text" id="searchInput" placeholder="Search titles, directors, actors…" oninput="handleSearch()">
@@ -362,8 +363,8 @@ footer{padding:28px 32px;border-top:1px solid var(--border);display:flex;align-i
   <div class="coll-portrait-row" id="portraitRow1" style="margin-bottom:10px;"></div>
   <div class="coll-portrait-row" id="portraitRow2" style="margin-bottom:32px;"></div>
 </div>
-<div class="section">
-  <div class="section-header"><div class="section-title">The Collection</div><div class="section-count" id="collectionCount"></div></div>
+<div class="section" id="filmsSection">
+  <div class="section-header"><div class="section-title" id="filmsSectionTitle">The Collection</div><div class="section-count" id="collectionCount"></div></div>
   <div class="movie-grid" id="movieGrid"></div>
   <div class="movie-list" id="movieList">
     <div class="list-header"><span></span><span>Title / Director</span><span>Genre</span><span>Year</span><span>Rating</span><span>Quality</span></div>
@@ -502,7 +503,7 @@ function runVault(){
 // STATE
 // ============================================================
 const state={filtered:[...MOVIES],decade:'all',genre:null,rating:null,quality:null,color:null,
-  search:'',heroMovies:[],heroIdx:0,heroTimer:null,tmdbCache:{},
+  search:'',recentOnly:false,heroMovies:[],heroIdx:0,heroTimer:null,tmdbCache:{},
   hubBgTimer:null,hubBgIdx:0,hubBgFrames:[]};
 
 // ============================================================
@@ -591,13 +592,30 @@ function setDecade(d){
   applyFilters();
 }
 function toggleFilters(){document.getElementById('filterDrawer').classList.toggle('open');document.getElementById('btnFilters').classList.toggle('active');}
-function clearFilters(){state.genre=state.rating=state.quality=state.color=null;document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));applyFilters();}
+function clearFilters(){state.genre=state.rating=state.quality=state.color=null;state.recentOnly=false;document.querySelectorAll('.chip.active').forEach(c=>c.classList.remove('active'));const br=document.getElementById('btnRecent');if(br)br.classList.remove('active');const ft=document.getElementById('filmsSectionTitle');if(ft)ft.textContent='The Collection';applyFilters();}
 function handleSearch(){state.search=document.getElementById('searchInput').value.toLowerCase();applyFilters();}
 function goHome(){closeHub();closeModal();window.scrollTo({top:0,behavior:'smooth'});}
 function scrollToCollections(){document.getElementById('collectionsSection').scrollIntoView({behavior:'smooth'});}
+function toggleRecent(){
+  state.recentOnly=!state.recentOnly;
+  document.getElementById('btnRecent').classList.toggle('active',state.recentOnly);
+  document.getElementById('filmsSectionTitle').textContent=
+    state.recentOnly?'Recently Added':'The Collection';
+  applyFilters();
+  document.getElementById('filmsSection').scrollIntoView({behavior:'smooth'});
+}
 
 function applyFilters(){
   let f=[...MOVIES];
+  if(state.recentOnly){
+    const cutoff=new Date();
+    cutoff.setDate(cutoff.getDate()-90);
+    f=f.filter(m=>{
+      if(!m.dateAdded||m.dateAdded==='Original')return false;
+      const d=new Date(m.dateAdded);
+      return !isNaN(d)&&d>=cutoff;
+    });
+  }
   if(state.decade!=='all')f=f.filter(m=>m.decade===state.decade);
   if(state.genre)f=f.filter(m=>m.genre.includes(state.genre));
   if(state.rating)f=f.filter(m=>m.rating===state.rating);
@@ -626,7 +644,7 @@ function makeCard(movie,idPrefix,i){
     <div class="card-gradient"></div>
     <div class="card-badge ${(movie.quality==='DVD')?'dvd':movie.quality==='SD'?'sd':''}">${movie.quality==='DVD'?'DVD':movie.quality==='SD'?'SD':'HI-DEF'}</div>
     ${movie.color==='B&W'?'<div class=\"card-badge bw\" style=\"top:28px\">B&amp;W</div>':''}
-    <div class="card-shelf"><div class="card-shelf-title">${movie.title}</div><div class="card-shelf-meta"><span class="meta-year">${movie.year}</span> · ${movie.genre.split('/')[0]}</div></div>
+    <div class="card-shelf"><div class="card-shelf-title">${movie.title}</div><div class="card-shelf-meta">${movie.year} · ${movie.genre.split('/')[0]}</div></div>
     <div class="card-hover-cta"><div class="card-cta-pill">View Details</div></div>
   </div>`;
   card.onclick=()=>openModal(movie);
@@ -1032,7 +1050,7 @@ async function init(){
 // so the functions need to be on window — they're defined inside runVault()
 // here, which means they're not global by default.
 Object.assign(window, {
-  goHome, scrollToCollections, setView, toggleFilters, clearFilters,
+  goHome, scrollToCollections, toggleRecent, setView, toggleFilters, clearFilters,
   openHeroModal, jumpHero, setDecade, toggleChip, handleSearch,
   closeHub, closeModal, handleOverlayClick, openHub,
   openPosterLightbox, closePosterLightbox
